@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Usage & Cam kết liêm chính - Dân chủ xã hội chủ nghĩa</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+        .ai-content {
+            background: white;
+            border-radius: 20px;
+            margin: 2rem auto;
+            padding: 3rem 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            line-height: 1.8;
+        }
+        .ai-section {
+            margin-bottom: 3rem;
+        }
+        .tool-card {
+            background: #f8f9ff;
+            border: 1px solid #e3e8ff;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            left:0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+        .tool-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .tool-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+        .prompt-box {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+            border-left: 4px solid #667eea;
+        }
+        .output-box {
+            background: #edf2f7;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #10b981;
+        }
+        .edited-box {
+            background: #fff5f5;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #f56565;
+        }
+        .commitment-box {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        .verification-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .verification-table th,
+        .verification-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .verification-table th {
+            background: #f7fafc;
+            font-weight: 600;
+            color: #2d3748;
+        }
+        .verification-table tr:hover {
+            background: #f7fafc;
+        }
+        .check-icon {
+            color: #10b981;
+            font-size: 1.2rem;
+        }
+        .warning-box {
+            background: #fff7ed;
+            border: 2px solid #fed7aa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .warning-box h4 {
+            color: #ea580c;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">
+                    <i class="fas fa-balance-scale"></i> Dân chủ xã hội chủ nghĩa
+                </h1>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link"> <i class="fas fa-home"></i> Trang chủ</a></li>
+                        <li class="nav-item"><a href="theory.html" class="nav-link"> <i class="fas fa-book"></i> Lý thuyết</a></li>
+                        <li class="nav-item"><a href="practice.html" class="nav-link"> <i class="fas fa-flag"></i> Thực tiễn VN</a></li>
+                        <li class="nav-item"><a href="quiz.html" class="nav-link"> <i class="fas fa-question-circle"></i> Quiz</a></li>
+                        <li class="nav-item"><a href="ai-usage.html" class="nav-link active"> <i class="fas fa-robot"></i> AI Usage</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container">
+            <div class="breadcrumb">
+                <i class="fas fa-home"></i> <a href="index.html">Trang chủ</a> 
+                <i class="fas fa-chevron-right" style="margin: 0 0.5rem;"></i> 
+                <strong>AI Usage & Cam kết liêm chính</strong>
+            </div>
+            <div class="ai-content">
+                <h2 style="text-align:center; margin-bottom:3rem; color:#2d3748;">
+                    <i class="fas fa-robot"></i> Báo cáo sử dụng AI & Cam kết liêm chính học thuật
+                </h2>
+                <div class="ai-section">
+                    <h3><i class="fas fa-tools"></i> Công cụ AI đã sử dụng</h3>
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon"><i class="fas fa-brain"></i></div>
+                            <div>
+                                <h4>Claude 3.5 Sonnet (Anthropic)</h4>
+                                <p><strong>Mục đích:</strong> Hỗ trợ tạo cấu trúc website, code HTML/CSS/JavaScript và tổng hợp nội dung từ PDF</p>
+                            </div>
+                        </div>
+                        <div class="prompt-box">
+                            <p><strong>Prompt chính:</strong></p>
+                            <p>"Hãy tạo mã HTML/CSS cho website tương tác về dân chủ xã hội chủ nghĩa dựa trên file PDF. Yêu cầu giao diện user-friendly, responsive, có quiz tương tác và đáp ứng tiêu chí sáng tạo cho presentation"</p>
+                        </div>
+                        <div class="output-box">
+                            <p><strong>Output từ AI:</strong></p>
+                            <ul>
+                                <li>Cấu trúc HTML cơ bản cho 5 trang web</li>
+                                <li>CSS với design gradient và responsive layout</li>
+                                <li>JavaScript cho quiz tương tác và timer</li>
+                                <li>Nội dung tóm tắt từ lý thuyết trong PDF</li>
+                            </ul>
+                        </div>
+                        <div class="edited-box">
+                            <p><strong>Phần nhóm chỉnh sửa:</strong></p>
+                            <ul>
+                                <li>Kiểm tra và hiệu chỉnh nội dung lý thuyết theo tài liệu LLCT gốc</li>
+                                <li>Bổ sung thêm ví dụ thực tiễn Việt Nam hiện nay (2023-2025)</li>
+                                <li>Điều chỉnh câu hỏi quiz phù hợp với nội dung bài học</li>
+                                <li>Chỉnh sửa giao diện cho phù hợp với yêu cầu thời gian trải nghiệm ≤15 phút</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="ai-section">
+                    <h3><i class="fas fa-search"></i> Kiểm chứng và đối chiếu nguồn</h3>
+                    <table class="verification-table">
+                        <thead>
+                            <tr>
+                                <th>Nội dung</th>
+                                <th>Nguồn gốc</th>
+                                <th>Phương thức kiểm chứng</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Khái niệm dân chủ và nguồn gốc từ "demokratos"</td>
+                                <td>File PDF MLN131, trang 76-77</td>
+                                <td>So sánh trực tiếp với tài liệu gốc</td>
+                                <td><i class="fas fa-check-circle check-icon"></i> Đã kiểm chứng</td>
+                            </tr>
+                            <tr>
+                                <td>Lời dạy của Chủ tịch Hồ Chí Minh</td>
+                                <td>Hồ Chí Minh Toàn tập (trích từ PDF)</td>
+                                <td>Đối chiếu với nguồn trích dẫn trong PDF</td>
+                                <td><i class="fas fa-check-circle check-icon"></i> Đã kiểm chứng</td>
+                            </tr>
+                            <tr>
+                                <td>Bản chất 3 mặt của dân chủ XHCN</td>
+                                <td>File PDF MLN131, trang 82-85</td>
+                                <td>So sánh từng điểm với nội dung gốc</td>
+                                <td><i class="fas fa-check-circle check-icon"></i> Đã kiểm chứng</td>
+                            </tr>
+                            <tr>
+                                <td>Thống kê bầu cử QH XV (99.57%)</td>
+                                <td>Thông tin thực tiễn được nhóm bổ sung</td>
+                                <td>Tra cứu báo cáo chính thức của Bộ Nội vụ</td>
+                                <td><i class="fas fa-check-circle check-icon"></i> Đã kiểm chứng</td>
+                            </tr>
+                            <tr>
+                                <td>Hiến pháp 2013 - Điều 2, 6</td>
+                                <td>Văn bản pháp luật chính thống</td>
+                                <td>Đối chiếu với Hiến pháp 2013 trên cổng TTĐT Quốc hội</td>
+                                <td><i class="fas fa-check-circle check-icon"></i> Đã kiểm chứng</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="ai-section">
+                    <h3><i class="fas fa-lightbulb"></i> Ứng dụng AI sáng tạo</h3>
+                    <div class="highlight-box">
+                        <h4>AI chỉ đóng vai trò hỗ trợ, không thay thế hoàn toàn:</h4>
+                        <ul>
+                            <li><strong>Tạo cấu trúc kỹ thuật:</strong> HTML/CSS/JavaScript để xây dựng website tương tác</li>
+                            <li><strong>Hỗ trợ layout và design:</strong> Gợi ý bố cục responsive, màu sắc chuyên nghiệp</li>
+                            <li><strong>Generate quiz framework:</strong> Cấu trúc cơ bản cho câu hỏi trắc nghiệm tương tác</li>
+                            <li><strong>Tóm tắt nội dung:</strong> Rút trích thông tin chính từ PDF làm khung nội dung</li>
+                        </ul>
+                        <p><strong>Phần sinh viên tự thực hiện:</strong></p>
+                        <ul>
+                            <li>Nghiên cứu, hiểu sâu nội dung LLCT</li>
+                            <li>Bổ sung ví dụ thực tiễn và dẫn chứng cập nhật</li>
+                            <li>Thiết kế hoạt động mở, kết phù hợp</li>
+                            <li>Kiểm tra tính chính xác từng thông tin</li>
+                            <li>Điều chỉnh theo yêu cầu bài tập</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="commitment-box">
+                    <h3><i class="fas fa-hand-paper"></i> CAM KẾT LIÊM CHÍNH HỌC THUẬT</h3>
+                    <div style="text-align:left; margin-top:2rem; max-width:800px; margin-left:auto; margin-right:auto;">
+                        <h4>Chúng tôi, Nhóm MLN131, cam kết rằng:</h4>
+                        <p><strong>1. Không để AI làm thay hoàn toàn:</strong></p>
+                        <p>AI chỉ được dùng như công cụ hỗ trợ kỹ thuật. Toàn bộ nội dung học thuật do nhóm nghiên cứu, hiểu sâu và tự biên soạn dựa trên tài liệu chính thống.</p>
+                        <p><strong>2. Phân định rõ AI output và phần sinh viên:</strong></p>
+                        <p>Tất cả thông tin AI tạo ra được ghi nhận minh bạch. Phần nội dung quan trọng do nhóm tự viết.</p>
+                        <p><strong>3. Đối chiếu nguồn chính thống:</strong></p>
+                        <p>Thông tin do AI hỗ trợ tạo ra được kiểm tra, đối chiếu với tài liệu LLCT, Hiến pháp 2013 và văn bản chính thống.</p>
+                        <div style="margin-top:2rem; padding:1.5rem; background:rgba(255,255,255,0.2); border-radius:10px;">
+                            <p><strong>Thành viên nhóm:</strong></p>
+                            <ul style="list-style-position: inside;">
+                                <li>Thành viên A - Lãnh đạo nhóm, nội dung lý thuyết</li>
+                                <li>Thành viên B - Kỹ thuật AI, thiết lập website</li>
+                                <li>Thành viên C - Nội dung thực tiễn, kiểm chứng</li>
+                                <li>Thành viên D - Tổ chức, phản biện, đánh giá</li>
+                            </ul>
+                        </div>
+                        <p style="text-align:center; margin-top:2rem; font-style:italic;">
+                            "Chúng tôi cam kết sản phẩm này được thực hiện với tinh thần liêm chính học thuật, tôn trọng tri thức và phục vụ mục tiêu giáo dục."
+                        </p>
+                    </div>
+                </div>
+                <div class="warning-box">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Lưu ý quan trọng</h4>
+                    <p>Sản phẩm website này được tạo ra với mục đích học tập và trình bày cho môn Chủ nghĩa xã hội khoa học. Tất cả nội dung dựa trên tài liệu chính thống và được kiểm chứng cẩn thận. Việc sử dụng AI thực hiện minh bạch và có trách nhiệm, tuân thủ nguyên tắc liêm chính học thuật.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Nhóm MLN131 | Cam kết liêm chính học thuật</p>
+                <div class="footer-links"><span>Sử dụng AI có trách nhiệm - Minh bạch - Sáng tạo</span></div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
