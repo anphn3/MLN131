@@ -122,3 +122,55 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Smooth page transitions khi click navigation
+document.addEventListener('DOMContentLoaded', function() {
+    // Add loading animation for page transitions
+    const navLinks = document.querySelectorAll('.nav-link[href$=".html"]');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const href = this.getAttribute('href');
+            
+            // Add loading animation
+            document.body.style.opacity = '0.7';
+            document.body.style.transition = 'opacity 0.3s ease';
+            
+            // Show loading indicator
+            const loader = document.createElement('div');
+            loader.className = 'page-loader';
+            loader.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang tải...';
+            document.body.appendChild(loader);
+            
+            // Navigate after animation
+            setTimeout(() => {
+                window.location.href = href;
+            }, 300);
+        });
+    });
+    
+    // Page load animation
+    window.addEventListener('load', function() {
+        document.body.style.opacity = '1';
+        document.body.style.transition = 'opacity 0.5s ease';
+        
+        // Remove any existing loader
+        const loader = document.querySelector('.page-loader');
+        if (loader) loader.remove();
+    });
+    
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+});
