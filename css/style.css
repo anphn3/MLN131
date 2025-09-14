@@ -1,4 +1,15 @@
-/* CSS cải tiến cho website Dân chủ xã hội chủ nghĩa - Thẩm mỹ triết học */
+/* Color variables - Bảng màu harmonious */
+:root {
+    --primary-dark: #1a2332;
+    --primary-medium: #2c3947;
+    --primary-light: #4a5568;
+    --accent-gold: #c19b0a;
+    --accent-gold-light: #e6b800;
+    --cream: #faf8f0;
+    --text-primary: #1a2332;
+    --text-secondary: #4a5568;
+    --text-light: #f7fafc;
+}
 
 /* Reset và base styles với typography học thuật */
 * {
@@ -15,7 +26,7 @@ body {
     font-family: 'Crimson Text', 'Times New Roman', serif;
     font-size: 16px;
     line-height: 1.8;
-    color: #2c3e50;
+    color: var(--text-primary);
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     min-height: 100vh;
     letter-spacing: 0.3px;
@@ -29,13 +40,13 @@ body {
 
 /* Header với thiết kế học thuật */
 .header {
-    background: rgba(44, 62, 80, 0.98);
+    background: rgba(26, 35, 50, 0.98);
     backdrop-filter: blur(15px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 3px solid #d4af37;
+    border-bottom: 3px solid var(--accent-gold);
 }
 
 .header-content {
@@ -49,7 +60,7 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
     font-weight: 700;
-    color: #ecf0f1;
+    color: var(--text-light);
     display: flex;
     align-items: center;
     gap: 0.8rem;
@@ -57,7 +68,7 @@ body {
 }
 
 .logo i {
-    color: #d4af37;
+    color: var(--accent-gold-light);
     font-size: 2.2rem;
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
 }
@@ -93,7 +104,7 @@ body {
     left: 50%;
     width: 0;
     height: 2px;
-    background: #d4af37;
+    background: var(--accent-gold-light);
     transition: all 0.3s ease;
     transform: translateX(-50%);
 }
@@ -105,8 +116,8 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-    color: #d4af37;
-    background: rgba(212, 175, 55, 0.1);
+    color: var(--accent-gold-light);
+    background: rgba(193, 155, 10, 0.15);
     transform: translateY(-1px);
 }
 
@@ -118,7 +129,7 @@ body {
 
 /* Hero section với thiết kế trang trọng */
 .hero {
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    background: linear-gradient(135deg, var(--cream) 0%, #fafafa 100%);
     border-radius: 20px;
     margin: 2rem auto;
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
@@ -133,7 +144,7 @@ body {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #d4af37, #f39c12, #d4af37);
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light), var(--accent-gold));
 }
 
 .hero .container {
@@ -148,7 +159,7 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 3rem;
     font-weight: 700;
-    color: #2c3e50;
+    color: var(--text-primary);
     margin-bottom: 1.5rem;
     line-height: 1.2;
     position: relative;
@@ -161,13 +172,13 @@ body {
     left: 0;
     width: 120px;
     height: 3px;
-    background: #d4af37;
+    background: var(--accent-gold);
 }
 
 .hero-subtitle {
     font-family: 'Crimson Text', serif;
     font-size: 1.2rem;
-    color: #5d6d7e;
+    color: var(--text-secondary);
     margin-bottom: 2.5rem;
     line-height: 1.8;
     font-style: italic;
@@ -183,96 +194,49 @@ body {
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    background: #f8f9fa;
+    background: #fafafa;
     padding: 1rem 1.5rem;
     border-radius: 12px;
-    border-left: 4px solid #2c3e50;
+    border-left: 4px solid var(--primary-dark);
     transition: all 0.3s ease;
 }
 
 .stat-item:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    border-left-color: #d4af37;
+    border-left-color: var(--accent-gold);
 }
 
 .stat-item i {
-    color: #2c3e50;
+    color: var(--primary-dark);
     font-size: 1.3rem;
 }
 
 .stat-item span {
     font-family: 'Inter', sans-serif;
     font-size: 0.95rem;
-    color: #2c3e50;
+    color: var(--text-primary);
     font-weight: 500;
 }
 
-/* Hero image với thiết kế biểu tượng */
-.hero-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.placeholder-image {
-    background: linear-gradient(135deg, #2c3e50, #34495e);
-    color: #ecf0f1;
-    border-radius: 20px;
-    padding: 4rem 2rem;
-    text-align: center;
+/* Hero image styling */
+.hero-img {
     width: 100%;
-    min-height: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-    position: relative;
-    overflow: hidden;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
-.placeholder-image::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 10px,
-        rgba(212, 175, 55, 0.1) 10px,
-        rgba(212, 175, 55, 0.1) 20px
-    );
-    animation: move 20s linear infinite;
-}
-
-@keyframes move {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-.placeholder-image i {
-    font-size: 5rem;
-    opacity: 0.9;
-    z-index: 1;
-    color: #d4af37;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.placeholder-image p {
-    font-family: 'Crimson Text', serif;
-    font-weight: 600;
-    font-size: 1.1rem;
-    opacity: 0.9;
-    z-index: 1;
+.hero-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
 }
 
 /* Features section với layout cải tiến */
 .features {
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    background: linear-gradient(135deg, var(--cream) 0%, #fafafa 100%);
     border-radius: 20px;
     margin: 3rem auto;
     padding: 4rem 0;
@@ -287,7 +251,7 @@ body {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #d4af37, #f39c12, #d4af37);
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light), var(--accent-gold));
 }
 
 .section-title {
@@ -295,7 +259,7 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
     font-weight: 600;
-    color: #2c3e50;
+    color: var(--text-primary);
     margin-bottom: 4rem;
     position: relative;
 }
@@ -308,7 +272,7 @@ body {
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background: #d4af37;
+    background: var(--accent-gold);
 }
 
 .features-grid {
@@ -336,7 +300,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(193, 155, 10, 0.1), transparent);
     transition: all 0.6s ease;
 }
 
@@ -347,30 +311,30 @@ body {
 .feature-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-    border-color: #d4af37;
+    border-color: var(--accent-gold);
 }
 
 .feature-icon {
     width: 90px;
     height: 90px;
-    background: linear-gradient(135deg, #2c3e50, #34495e);
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-medium));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 2rem;
-    color: #d4af37;
+    color: var(--accent-gold-light);
     font-size: 2.5rem;
     position: relative;
     z-index: 1;
-    box-shadow: 0 8px 25px rgba(44, 62, 80, 0.3);
+    box-shadow: 0 8px 25px rgba(26, 35, 50, 0.3);
 }
 
 .feature-card h4 {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     font-weight: 600;
-    color: #2c3e50;
+    color: var(--text-primary);
     margin-bottom: 1.5rem;
     position: relative;
     z-index: 1;
@@ -378,7 +342,7 @@ body {
 
 .feature-card p {
     font-family: 'Crimson Text', serif;
-    color: #5d6d7e;
+    color: var(--text-secondary);
     line-height: 1.8;
     font-size: 1.05rem;
     position: relative;
@@ -387,7 +351,7 @@ body {
 
 /* Footer với thiết kế trang trọng */
 .footer {
-    background: linear-gradient(135deg, #2c3e50, #34495e);
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-medium));
     color: #bdc3c7;
     margin-top: 4rem;
     position: relative;
@@ -400,7 +364,7 @@ body {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, #d4af37, #f39c12, #d4af37);
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light), var(--accent-gold));
 }
 
 .footer-content {
@@ -419,24 +383,24 @@ body {
 
 /* Breadcrumb với thiết kế học thuật */
 .breadcrumb {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--cream);
     padding: 1.2rem 2rem;
     border-radius: 12px;
     margin-bottom: 2rem;
     font-family: 'Inter', sans-serif;
-    border-left: 4px solid #d4af37;
+    border-left: 4px solid var(--accent-gold);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .breadcrumb a {
-    color: #2c3e50;
+    color: var(--text-primary);
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
 }
 
 .breadcrumb a:hover {
-    color: #d4af37;
+    color: var(--accent-gold);
     text-decoration: underline;
 }
 
@@ -444,7 +408,7 @@ body {
 .theory-content,
 .practice-content,
 .ai-content {
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    background: linear-gradient(135deg, var(--cream) 0%, #fafafa 100%);
     border-radius: 20px;
     margin: 2rem auto;
     padding: 4rem 3rem;
@@ -462,7 +426,7 @@ body {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #d4af37, #f39c12, #d4af37);
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light), var(--accent-gold));
 }
 
 .theory-section {
@@ -471,18 +435,18 @@ body {
 
 .theory-section h3 {
     font-family: 'Playfair Display', serif;
-    color: #2c3e50;
+    color: var(--text-primary);
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
-    border-bottom: 2px solid #d4af37;
+    border-bottom: 2px solid var(--accent-gold);
     position: relative;
 }
 
 .theory-section h4 {
     font-family: 'Playfair Display', serif;
-    color: #34495e;
+    color: var(--primary-light);
     font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
@@ -497,10 +461,10 @@ body {
     text-indent: 2rem;
 }
 
-/* Highlight boxes với thiết kế cải tiến */
+/* Highlight boxes với thiết kế cải tiến - CONTRAST CAO */
 .highlight-box {
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-    border-left: 5px solid #d4af37;
+    background: linear-gradient(135deg, var(--cream), #f0f0f0);
+    border-left: 5px solid var(--accent-gold);
     padding: 2rem;
     margin: 2rem 0;
     border-radius: 12px;
@@ -514,36 +478,49 @@ body {
     top: 10px;
     left: 15px;
     font-size: 3rem;
-    color: #d4af37;
-    opacity: 0.3;
+    color: var(--accent-gold);
+    opacity: 0.4;
     font-family: serif;
 }
 
+/* Quote box - CONTRAST CAO - SỬA CHÍNH */
 .quote {
     font-style: italic;
-    background: linear-gradient(135deg, #2c3e50, #34495e);
-    color: #ecf0f1;
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-medium)) !important;
+    color: var(--text-light) !important;
     padding: 2rem 2.5rem;
     border-radius: 12px;
     margin: 2rem 0;
-    border-left: 4px solid #d4af37;
+    border-left: 4px solid var(--accent-gold);
     position: relative;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 25px rgba(26, 35, 50, 0.3);
+    z-index: 2;
 }
 
 .quote::before {
     content: '"';
     position: absolute;
-    top: -10px;
+    top: -15px;
     left: 20px;
     font-size: 4rem;
-    color: #d4af37;
-    opacity: 0.7;
+    color: var(--accent-gold-light);
+    opacity: 0.8;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.quote p {
+    color: var(--text-light) !important;
+    margin-bottom: 0;
+}
+
+.quote strong {
+    color: var(--accent-gold-light) !important;
+    font-weight: 600;
 }
 
 .definition {
-    background: linear-gradient(135deg, #2c3e50, #34495e);
-    color: white;
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-medium));
+    color: var(--text-light);
     padding: 3rem;
     border-radius: 18px;
     margin: 3rem 0;
@@ -558,7 +535,7 @@ body {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #d4af37, #f39c12, #d4af37);
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light), var(--accent-gold));
     border-radius: 18px 18px 0 0;
 }
 
@@ -686,9 +663,9 @@ body {
 .nav-link:focus,
 button:focus,
 .quiz-button:focus {
-    outline: 3px solid #d4af37;
+    outline: 3px solid var(--accent-gold);
     outline-offset: 2px;
-    box-shadow: 0 0 0 5px rgba(212, 175, 55, 0.2);
+    box-shadow: 0 0 0 5px rgba(193, 155, 10, 0.2);
 }
 
 /* Scroll progress bar */
@@ -699,29 +676,15 @@ button:focus,
     width: 100%;
     height: 4px;
     z-index: 9999;
-    background: rgba(44, 62, 80, 0.1);
+    background: rgba(26, 35, 50, 0.1);
 }
 
 .scroll-progress-bar {
     height: 100%;
-    background: linear-gradient(90deg, #d4af37, #f39c12);
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light));
     transition: width 0.3s ease;
     width: 0%;
-    box-shadow: 0 2px 10px rgba(212, 175, 55, 0.4);
-}
-/* Hero image styling */
-.hero-img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
-
-.hero-img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2px 10px rgba(193, 155, 10, 0.4);
 }
 
 /* Remove placeholder image styles (not needed anymore) */
