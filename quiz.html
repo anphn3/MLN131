@@ -321,27 +321,39 @@
       }
 
       function showQuestion() {
-        const container = document.getElementById('quiz-container');
-        const question = quizData[currentQuestion];
-        container.innerHTML = `
-            <div class="quiz-question">
-                <h3><i class="fas fa-question"></i> Câu ${currentQuestion + 1}/${quizData.length}</h3>
-                <p><strong>${question.question}</strong></p>
-                <ul class="quiz-options" id="options">
-                    ${question.options.map((option, index) => `
-                        <li class="quiz-option" onclick="selectOption(${index})">
-                            <strong>${String.fromCharCode(65 + index)}.</strong> ${option}
-                        </li>
-                    `).join('')}
-                </ul>
-                <div style="text-align: center; margin-top: 2rem;">
-                    <button class="quiz-button" onclick="submitAnswer()" id="submit-btn" disabled> Xác nhận đáp án </button>
-                    ${currentQuestion > 0 ? '<button class="quiz-button" onclick="prevQuestion()">Câu trước</button>' : ''}
-                </div>
+    const container = document.getElementById('quiz-container');
+    const question = quizData[currentQuestion];
+    
+    container.innerHTML = `
+        <div class="quiz-question">
+            <h3><i class="fas fa-question"></i> Câu ${currentQuestion + 1}/${quizData.length}</h3>
+            <p><strong>${question.question}</strong></p>
+            <ul class="quiz-options" id="options">
+                ${question.options.map((option, index) => `
+                    <li class="quiz-option" onclick="selectOption(${index})">
+                        <strong>${String.fromCharCode(65 + index)}.</strong> ${option}
+                    </li>
+                `).join('')}
+            </ul>
+            <div style="text-align: center; margin-top: 2rem;">
+                <button class="quiz-button" onclick="submitAnswer()" id="submit-btn" disabled>
+                    Xác nhận đáp án
+                </button>
+                ${currentQuestion > 0 ? '<button class="quiz-button" onclick="prevQuestion()">Câu trước</button>' : ''}
             </div>
-        `;
-        updateProgressBar();
-      }
+        </div>
+    `;
+
+    updateProgressBar();
+    
+    // Pre-select answer if user already answered this question
+    if (userAnswers[currentQuestion] !== undefined) {
+        const options = document.querySelectorAll('.quiz-option');
+        options[userAnswers[currentQuestion]].classList.add('selected');
+        document.getElementById('submit-btn').disabled = false;
+    }
+}
+
 
       function selectOption(index) {
         const options = document.querySelectorAll('.quiz-option');
@@ -352,23 +364,52 @@
       }
 
       function submitAnswer() {
-        const question = quizData[currentQuestion];
-        const options = document.querySelectorAll('.quiz-option');
-        options.forEach((option, index) => {
-          if (index === question.correct) option.classList.add('correct');
-          else if (index === userAnswers[currentQuestion] && index !== question.correct) option.classList.add('incorrect');
-        });
-        if (userAnswers[currentQuestion] === question.correct) score++;
-        const container = document.getElementById('quiz-container');
+    // Tránh spam click - disable button ngay lập tức
+    const submitBtn = document.getElementById('submit-btn');
+    if (submitBtn.disabled || submitBtn.classList.contains('answered')) {
+        return; // Đã trả lời rồi, không làm gì
+    }
+    
+    // Đánh dấu đã trả lời
+    submitBtn.disabled = true;
+    submitBtn.classList.add('answered');
+    submitBtn.textContent = '✓ Đã xác nhận';
+
+    const question = quizData[currentQuestion];
+    const options = document.querySelectorAll('.quiz-option');
+    
+    // Disable all options to prevent further clicking
+    options.forEach((option, index) => {
+        option.style.pointerEvents = 'none'; // Không click được nữa
+        if (index === question.correct) {
+            option.classList.add('correct');
+        } else if (index === userAnswers[currentQuestion] && index !== question.correct) {
+            option.classList.add('incorrect');
+        }
+    });
+
+    if (userAnswers[currentQuestion] === question.correct) {
+        score++;
+    }
+
+    // Show explanation - CHỈ 1 LẦN
+    const container = document.getElementById('quiz-container');
+    
+    // Kiểm tra xem đã có explanation chưa
+    if (!container.querySelector('.explanation-box')) {
         container.innerHTML += `
-          <div class="highlight-box" style="margin-top: 1rem;">
-            <p><strong><i class="fas fa-info-circle"></i> Giải thích:</strong> ${question.explanation}</p>
-          </div>
-          <div style="text-align: center; margin-top: 2rem;">
-            <button class="quiz-button" onclick="nextQuestion()">${currentQuestion < quizData.length - 1 ? 'Câu tiếp theo' : 'Xem kết quả'}</button>
-          </div>
+            <div class="highlight-box explanation-box" style="margin-top: 1rem;">
+                <p><strong><i class="fas fa-info-circle"></i> Giải thích:</strong> ${question.explanation}</p>
+            </div>
+            <div class="next-button-container" style="text-align: center; margin-top: 2rem;">
+                <button class="quiz-button" onclick="nextQuestion()">
+                    ${currentQuestion < quizData.length - 1 ? 'Câu tiếp theo' : 'Xem kết quả'}
+                </button>
+            </div>
         `;
-      }
+    }
+}
+
 
       function nextQuestion() {
         currentQuestion++;
