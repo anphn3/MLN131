@@ -9,68 +9,266 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <style>
-        .theory-content {
-            background: white;
-            border-radius: 20px;
-            margin: 2rem auto;
-            padding: 3rem 2rem;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            line-height: 1.8;
+        .theory-page {
+            min-height: 100vh;
+            padding: 2rem 0;
         }
-        .theory-section {
-            margin-bottom: 3rem;
+        
+        .theory-hero {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 3rem 0;
         }
-        .theory-section h3 {
-            color: #2d3748;
-            font-size: 1.5rem;
+        
+        .theory-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #ffe790;
             margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #667eea;
+            text-shadow: 0 4px 20px rgba(30, 30, 30, 0.8);
         }
-        .theory-section h4 {
-            color: #4a5568;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            margin-top: 2rem;
-        }
-        .theory-section p {
-            margin-bottom: 1rem;
-            text-align: justify;
-        }
-        .highlight-box {
-            background: #f7fafc;
-            border-left: 4px solid #667eea;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 8px;
-        }
-        .quote {
+        
+        .theory-hero p {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.3rem;
+            color: #f3f5f7;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
             font-style: italic;
-            background: #edf2f7;
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            margin: 1rem 0;
-            border-left: 3px solid #667eea;
         }
-        .definition {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
+        
+        .theory-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
-        .breadcrumb {
-            background: #f7fafc;
-            padding: 1rem 2rem;
-            border-radius: 10px;
+        
+        .theory-section {
+            background: rgba(0, 0, 0, 0.6);
+            margin: 3rem 0;
+            padding: 3rem;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+        }
+        
+        .theory-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: var(--accent-gold);
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
             margin-bottom: 2rem;
         }
-        .breadcrumb a {
-            color: #667eea;
-            text-decoration: none;
+        
+        .section-header i {
+            color: var(--accent-gold-light);
+            font-size: 2.5rem;
         }
-        .breadcrumb a:hover {
-            text-decoration: underline;
+        
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            color: #ffe790;
+            font-size: 2.2rem;
+            font-weight: 600;
+        }
+        
+        .theory-text {
+            font-family: 'Crimson Text', serif;
+            color: #f3f5f7;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+        
+        .theory-quote {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-medium));
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 15px;
+            border-left: 5px solid var(--accent-gold);
+            font-style: italic;
+        }
+        
+        .theory-quote p {
+            font-family: 'Crimson Text', serif;
+            color: #f7fafc;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .quote-author {
+            font-family: 'Inter', sans-serif;
+            color: var(--accent-gold-light);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: right;
+        }
+        
+        .characteristics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .characteristic-item {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .characteristic-item:hover {
+            background: rgba(0, 0, 0, 0.6);
+            transform: translateY(-3px);
+        }
+        
+        .characteristic-item h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent-gold-light);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .characteristic-item i {
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-medium));
+            color: var(--accent-gold-light);
+            padding: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            text-align: left;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+        
+        .comparison-table td {
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-family: 'Crimson Text', serif;
+            color: #f3f5f7;
+            line-height: 1.6;
+            vertical-align: top;
+        }
+        
+        .comparison-table tr:hover {
+            background: rgba(193, 155, 10, 0.1);
+        }
+        
+        .principles-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .principles-list li {
+            background: rgba(0, 0, 0, 0.3);
+            margin: 1rem 0;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-gold);
+            font-family: 'Crimson Text', serif;
+            color: #f3f5f7;
+            line-height: 1.7;
+            position: relative;
+            padding-left: 3rem;
+        }
+        
+        .principles-list li::before {
+            content: attr(data-number);
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .back-to-home {
+            text-align: center;
+            margin: 4rem 0;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
+            color: var(--primary-dark);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(193, 155, 10, 0.3);
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(193, 155, 10, 0.5);
+        }
+        
+        @media (max-width: 768px) {
+            .theory-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .theory-section {
+                padding: 2rem 1.5rem;
+                margin: 2rem 0;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+            
+            .characteristics-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 1rem;
+            }
         }
     </style>
 </head>
@@ -83,85 +281,279 @@
                 </h1>
                 <nav class="nav">
                     <ul class="nav-list">
-                        <li class="nav-item"><a href="index.html" class="nav-link"> <i class="fas fa-home"></i> Trang chủ</a></li>
+                        <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Trang chủ</a></li>
                         <li class="nav-item"><a href="theory.html" class="nav-link active"><i class="fas fa-book"></i> Lý thuyết</a></li>
-                        <li class="nav-item"><a href="practice.html" class="nav-link"><i class="fas fa-flag"></i> Thực tiễn VN</a></li>
-                        <li class="nav-item"><a href="quiz.html" class="nav-link"><i class="fas fa-question-circle"></i> Quiz</a></li>
                         <li class="nav-item"><a href="ai-usage.html" class="nav-link"><i class="fas fa-robot"></i> AI Usage</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
-    <main class="main">
+
+    <main class="theory-page">
         <div class="container">
-            <div class="breadcrumb">
-                <i class="fas fa-home"></i> <a href="index.html">Trang chủ</a> 
-                <i class="fas fa-chevron-right" style="margin: 0 0.5rem;"></i> 
-                <strong>Lý thuyết</strong>
-            </div>
+            <!-- Hero Section -->
+            <section class="theory-hero">
+                <h1><i class="fas fa-book-open"></i> Lý thuyết Dân chủ Xã hội Chủ nghĩa</h1>
+                <p>Tìm hiểu sâu về bản chất, đặc trưng và nguyên tắc của nền dân chủ xã hội chủ nghĩa - hình thức dân chủ cao nhất trong lịch sử loài người.</p>
+            </section>
+
             <div class="theory-content">
-                <h2 style="text-align: center; margin-bottom: 3rem; color: #2d3748;">
-                    <i class="fas fa-book-open"></i> Lý thuyết về Dân chủ và Dân chủ xã hội chủ nghĩa
-                </h2>
-                <div class="theory-section">
-                    <h3><i class="fas fa-lightbulb"></i> 1. Dân chủ và sự ra đời, phát triển của dân chủ</h3>
-                    <h4>1.1. Quan niệm về dân chủ</h4>
-                    <p>Thuật ngữ dân chủ ra đời vào khoảng thế kỉ VII – VI trước công nguyên. Các nhà tư tưởng Hy Lạp cổ đại đã dùng cụm từ <strong>"demokratos"</strong> để nói đến dân chủ, trong đó Demos là nhân dân (danh từ) và kratos là cai trị (động từ).</p>
-                    <div class="definition">
-                        <h4 style="color: white; margin-top: 0;"><i class="fas fa-quote-left"></i> Định nghĩa dân chủ</h4>
-                        <p style="margin-bottom: 0;">Theo đó, dân chủ được hiểu là <strong>nhân dân cai trị</strong> và sau này được các nhà chính trị gọi giản lược là quyền lực của nhân dân hay quyền lực thuộc về nhân dân.</p>
+                <!-- Section 1: Khái niệm -->
+                <section class="theory-section">
+                    <div class="section-header">
+                        <i class="fas fa-lightbulb"></i>
+                        <h2>Khái niệm Dân chủ Xã hội Chủ nghĩa</h2>
                     </div>
-                    <p>Từ việc nghiên cứu các chế độ dân chủ trong lịch sử và thực tiễn lãnh đạo cách mạng xã hội chủ nghĩa, các nhà sáng lập chủ nghĩa Mác - Lênin cho rằng, dân chủ là sản phẩm và là thành quả của quá trình đấu tranh giai cấp cho những giá trị tiến bộ của nhân loại.</p>
-                    <div class="highlight-box">
-                        <h4><i class="fas fa-star"></i> Theo quan điểm của chủ nghĩa Mác – Lênin, dân chủ có các nội dung cơ bản:</h4>
-                        <p><strong>Thứ nhất:</strong> Về phương diện quyền lực, dân chủ là quyền lực thuộc về nhân dân, nhân dân là chủ nhân của nhà nước.</p>
-                        <p><strong>Thứ hai:</strong> Trên phương diện chế độ xã hội và trong lĩnh vực chính trị, dân chủ là một hình thức hay hình thái nhà nước, là chính thể dân chủ hay chế độ dân chủ.</p>
-                        <p><strong>Thứ ba:</strong> Trên phương diện tổ chức và quản lí xã hội, dân chủ là một nguyên tắc – nguyên tắc dân chủ.</p>
+                    
+                    <p class="theory-text">
+                        <strong>Dân chủ xã hội chủ nghĩa</strong> là một hình thức chính trị của nhà nước xã hội chủ nghĩa, thừa nhận quyền tự do, bình đẳng của công dân và khẳng định nhân dân là chủ thể của quyền lực. Đây là hình thức dân chủ cao nhất trong lịch sử, được xây dựng trên nền tảng của chế độ công hữu về tư liệu sản xuất và sự lãnh đạo của đảng cộng sản.
+                    </p>
+                    
+                    <div class="theory-quote">
+                        <p>"Dân chủ vô sản là dân chủ đối với quần chúng lao động - chế độ dân chủ vì lợi ích của đa số"</p>
+                        <div class="quote-author">- V.I. Lenin</div>
                     </div>
-                    <div class="quote">
-                        <p><i class="fas fa-quote-left"></i> "Nước ta là nước dân chủ, địa vị cao nhất là dân, vì dân là chủ" - <strong>Chủ tịch Hồ Chí Minh</strong></p>
+                    
+                    <p class="theory-text">
+                        Khác với dân chủ tư sản chỉ phục vụ lợi ích của một thiểu số, dân chủ xã hội chủ nghĩa thực sự phục vụ lợi ích của đại đa số nhân dân lao động, đảm bảo quyền lực thuộc về nhân dân trong tất cả các lĩnh vực của đời sống xã hội.
+                    </p>
+                </section>
+
+                <!-- Section 2: Bản chất -->
+                <section class="theory-section">
+                    <div class="section-header">
+                        <i class="fas fa-gem"></i>
+                        <h2>Bản chất của Dân chủ Xã hội Chủ nghĩa</h2>
                     </div>
-                    <h4>1.2. Sự ra đời, phát triển của dân chủ</h4>
-                    <p>Nhu cầu về dân chủ xuất hiện từ rất sớm trong xã hội tự quản của cộng đồng thị tộc, bộ lạc. Trong chế độ cộng sản nguyên thủy đã xuất hiện hình thức manh nha của dân chủ mà Ăngghen gọi là <strong>"dân chủ nguyên thủy"</strong> hay còn gọi là <strong>"dân chủ quân sự"</strong>.</p>
-                    <div class="theory-section">
-                        <h4><i class="fas fa-history"></i> Các giai đoạn phát triển của dân chủ:</h4>
-                        <p><strong>1. Dân chủ nguyên thủy:</strong> Nhân dân bầu ra thủ lĩnh quân sự thông qua "Đại hội nhân dân", mọi người đều có quyền phát biểu và tham gia quyết định.</p>
-                        <p><strong>2. Dân chủ chủ nô:</strong> Được tổ chức thành nhà nước với đặc trưng là dân tham gia bầu cử ra Nhà nước. Tuy nhiên, chỉ có giai cấp chủ nô và một phần công dân tự do được coi là "dân".</p>
-                        <p><strong>3. Thời kỳ phong kiến:</strong> Chế độ dân chủ chủ nô bị xóa bỏ và thay vào đó là chế độ độc tài chuyên chế.</p>
-                        <p><strong>4. Dân chủ tư sản:</strong> Cuối thế kỷ XIV - đầu XV, giai cấp tư sản với những tư tưởng tiến bộ về tự do, công bằng, dân chủ đã mở đường cho sự ra đời của nền dân chủ tư sản.</p>
-                        <p><strong>5. Dân chủ xã hội chủ nghĩa:</strong> Khi Cách mạng Tháng Mười Nga thắng lợi (1917), nhân dân lao động ở nhiều quốc gia giành được quyền làm chủ nhà nước, thiết lập nền dân chủ vô sản.</p>
+                    
+                    <p class="theory-text">
+                        Bản chất của dân chủ xã hội chủ nghĩa thể hiện ở bốn phương diện cơ bản, tạo nên một hệ thống toàn diện và nhất quán:
+                    </p>
+                    
+                    <div class="characteristics-grid">
+                        <div class="characteristic-item">
+                            <h4><i class="fas fa-landmark"></i> Bản chất chính trị</h4>
+                            <p class="theory-text">
+                                Là sự lãnh đạo chính trị của giai cấp công nhân thông qua đảng cộng sản, thực hiện quyền lực và lợi ích của toàn thể nhân dân trên mọi lĩnh vực. Quyền lực này được thể hiện qua các quyền dân chủ, quyền làm chủ và quyền con người.
+                            </p>
+                        </div>
+                        
+                        <div class="characteristic-item">
+                            <h4><i class="fas fa-industry"></i> Bản chất kinh tế</h4>
+                            <p class="theory-text">
+                                Thực hiện chế độ công hữu về tư liệu sản xuất chủ yếu và phân phối lợi ích theo kết quả lao động. Mục tiêu là phát triển lực lượng sản xuất và nâng cao đời sống của toàn xã hội.
+                            </p>
+                        </div>
+                        
+                        <div class="characteristic-item">
+                            <h4><i class="fas fa-graduation-cap"></i> Bản chất văn hóa</h4>
+                            <p class="theory-text">
+                                Kế thừa và phát huy tinh hoa văn hóa truyền thống dân tộc. Nhân dân làm chủ các giá trị văn hóa tinh thần, có quyền nâng cao trình độ văn hóa và phát triển cá nhân.
+                            </p>
+                        </div>
+                        
+                        <div class="characteristic-item">
+                            <h4><i class="fas fa-users"></i> Bản chất xã hội</h4>
+                            <p class="theory-text">
+                                Kết hợp hài hòa lợi ích cá nhân, tập thể với lợi ích toàn xã hội. Lấy hệ tư tưởng Mác-Lênin làm nền tảng, đảm bảo vai trò lãnh đạo của đảng cộng sản.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="theory-section">
-                    <h3><i class="fas fa-star"></i> 2. Dân chủ xã hội chủ nghĩa</h3>
-                    <h4>2.1. Quá trình ra đời của nền dân chủ xã hội chủ nghĩa</h4>
-                    <p>Dân chủ xã hội chủ nghĩa đã được phôi thai từ thực tiễn đấu tranh giai cấp ở Pháp và Công xã Pari năm 1871, tuy nhiên, chỉ đến khi Cách mạng Tháng Mười Nga thành công với sự ra đời của nhà nước xã hội chủ nghĩa đầu tiên trên thế giới (1917), nền dân chủ xã hội chủ nghĩa mới chính thức được xác lập.</p>
-                    <div class="highlight-box">
-                        <p><i class="fas fa-info-circle"></i> <strong>Nguyên tắc cơ bản:</strong> Không ngừng mở rộng dân chủ, nâng cao mức độ giải phóng cho những người lao động, thu hút họ tham gia tự giác vào công việc quản lý nhà nước, quản lý xã hội.</p>
+                </section>
+
+                <!-- Section 3: So sánh với Dân chủ Tư sản -->
+                <section class="theory-section">
+                    <div class="section-header">
+                        <i class="fas fa-balance-scale"></i>
+                        <h2>So sánh Dân chủ XHCN và Dân chủ Tư sản</h2>
                     </div>
-                    <h4>2.2. Bản chất của nền dân chủ xã hội chủ nghĩa</h4>
-                    <p><strong>Bản chất chính trị:</strong> Dưới sự lãnh đạo duy nhất của một đảng của giai cấp công nhân (đảng Mác - Lênin) mà trên mọi lĩnh vực xã hội đều thực hiện quyền lực của nhân dân, thể hiện các quyền dân chủ, làm chủ, quyền con người.</p>
-                    <p><strong>Bản chất kinh tế:</strong> Nền dân chủ xã hội chủ nghĩa dựa trên chế độ sở hữu xã hội về những tư liệu sản xuất chủ yếu của toàn xã hội đáp ứng sự phát triển ngày càng cao của lực lượng sản xuất.</p>
-                    <p><strong>Bản chất tư tưởng – văn hóa – xã hội:</strong> Nền dân chủ xã hội chủ nghĩa lấy hệ tư tưởng Mác – Lênin làm chủ đạo đối với mọi hình thái ý thức xã hội khác trong xã hội mới.</p>
-                    <div class="definition">
-                        <h4 style="color: white; margin-top: 0;"><i class="fas fa-balance-scale"></i> Kết luận</h4>
-                        <p style="margin-bottom: 0;">Dân chủ xã hội chủ nghĩa là nền dân chủ cao hơn về chất so với nền dân chủ tư sản, là nền dân chủ mà ở đó, mọi quyền lực thuộc về nhân dân, dân là chủ và dân làm chủ; được thực hiện bằng nhà nước pháp quyền xã hội chủ nghĩa, đặt dưới sự lãnh đạo của Đảng Cộng sản.</p>
+                    
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Tiêu chí</th>
+                                <th>Dân chủ Xã hội Chủ nghĩa</th>
+                                <th>Dân chủ Tư sản</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Chủ thể quyền lực</strong></td>
+                                <td>Đại đa số nhân dân lao động</td>
+                                <td>Thiểu số giai cấp tư sản</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cơ sở kinh tế</strong></td>
+                                <td>Công hữu tư liệu sản xuất</td>
+                                <td>Tư hữu tư liệu sản xuất</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mục tiêu</strong></td>
+                                <td>Phục vụ lợi ích đại đa số</td>
+                                <td>Phục vụ lợi ích thiểu số</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Lãnh đạo</strong></td>
+                                <td>Đảng Cộng sản duy nhất</td>
+                                <td>Đa đảng cạnh tranh</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Phạm vi thực hiện</strong></td>
+                                <td>Toàn diện trên mọi lĩnh vực</td>
+                                <td>Chủ yếu trong chính trị</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="theory-quote">
+                        <p>"Dân chủ xã hội chủ nghĩa gấp triệu lần dân chủ hơn cộng hòa tư sản phồn thịnh nhất"</p>
+                        <div class="quote-author">- V.I. Lenin</div>
                     </div>
-                </div>
+                </section>
+
+                <!-- Section 4: Nguyên tắc cơ bản -->
+                <section class="theory-section">
+                    <div class="section-header">
+                        <i class="fas fa-list-check"></i>
+                        <h2>Nguyên tắc cơ bản của Dân chủ XHCN</h2>
+                    </div>
+                    
+                    <p class="theory-text">
+                        Để thực hiện thành công nền dân chủ xã hội chủ nghĩa, cần tuân thủ các nguyên tắc cơ bản sau:
+                    </p>
+                    
+                    <ul class="principles-list">
+                        <li data-number="1">
+                            <strong>Nguyên tắc tập trung dân chủ:</strong> Kết hợp chặt chẽ giữa tập trung và dân chủ, đảm bảo vừa phát huy quyền làm chủ của nhân dân, vừa tập trung thống nhất trong lãnh đạo và quản lý.
+                        </li>
+                        
+                        <li data-number="2">
+                            <strong>Nguyên tắc pháp chế xã hội chủ nghĩa:</strong> Dân chủ gắn liền với kỷ luật, kỷ cương và được thể chế hóa bằng pháp luật. Mọi hoạt động đều phải tuân thủ Hiến pháp và pháp luật.
+                        </li>
+                        
+                        <li data-number="3">
+                            <strong>Nguyên tắc lãnh đạo của đảng:</strong> Đảng Cộng sản là lực lượng lãnh đạo duy nhất, đảm bảo định hướng xã hội chủ nghĩa cho nền dân chủ.
+                        </li>
+                        
+                        <li data-number="4">
+                            <strong>Nguyên tắc phục vụ nhân dân:</strong> Mọi quyền lực đều xuất phát từ nhân dân và phục vụ lợi ích của nhân dân. "Dân là gốc" của mọi chính sách.
+                        </li>
+                        
+                        <li data-number="5">
+                            <strong>Nguyên tắc công khai, minh bạch:</strong> Nhân dân có quyền được biết, được tham gia và được giám sát các hoạt động của cơ quan quyền lực.
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Section 5: Đặc trưng nổi bật -->
+                <section class="theory-section">
+                    <div class="section-header">
+                        <i class="fas fa-star"></i>
+                        <h2>Đặc trưng nổi bật</h2>
+                    </div>
+                    
+                    <p class="theory-text">
+                        Dân chủ xã hội chủ nghĩa có những đặc trưng nổi bật, phân biệt rõ ràng với các hình thức dân chủ khác trong lịch sử:
+                    </p>
+                    
+                    <div class="characteristics-grid">
+                        <div class="characteristic-item">
+                            <h4><i class="fas fa-infinity"></i> Tính toàn diện</h4>
+                            <p class="theory-text">
+                                Thực hiện dân chủ trên tất cả các lĩnh vực: chính trị, kinh tế, văn hóa, xã hội, không giới hạn trong phạm vi chính trị như dân chủ tư sản.
+                            </p>
+                        </div>
+                        
+                        <div class="characteristic-item">
+                            <h4><i class="fas fa-users-cog"></i> Tính nhân dân</h4>
+                            <p class="theory-text">
+                                Đại đa số nhân dân lao động được tham gia trực tiếp vào việc quản lý nhà nước và xã hội, không chỉ thông qua đại diện.
+                            </p>
+                        </div>
+                        
+                        <div class="characteristic-item">
+                            <h4><i class="fas fa-shield-alt"></i> Tính pháp chế</h4>
+                            <p class="theory-text">
+                                Dân chủ được đảm bảo bằng hệ thống pháp luật hoàn chỉnh, gắn liền với kỷ luật và trách nhiệm của từng công dân.
+                            </p>
+                        </div>
+                        
+                        <div class="characteristic-item">
+                            <h4><i class="fas fa-arrow-trend-up"></i> Tính phát triển</h4>
+                            <p class="theory-text">
+                                Không ngừng hoàn thiện và phát triển theo điều kiện cụ thể của từng quốc gia, từng thời kỳ lịch sử.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 6: Ý nghĩa lịch sử -->
+                <section class="theory-section">
+                    <div class="section-header">
+                        <i class="fas fa-landmark"></i>
+                        <h2>Ý nghĩa lịch sử và thời đại</h2>
+                    </div>
+                    
+                    <p class="theory-text">
+                        Dân chủ xã hội chủ nghĩa không chỉ là một lý thuyết mà còn là hiện thực sống động, được thực hiện thành công tại nhiều quốc gia trên thế giới, đặc biệt là tại Việt Nam.
+                    </p>
+                    
+                    <div class="theory-quote">
+                        <p>"Quyền lực là của dân, lợi ích là vì dân, mọi quyết định đều phải xuất phát từ nguyện vọng và lợi ích chính đáng của nhân dân"</p>
+                        <div class="quote-author">- Tư tưởng Hồ Chí Minh</div>
+                    </div>
+                    
+                    <p class="theory-text">
+                        Thực tiễn cho thấy, nền dân chủ xã hội chủ nghĩa đã và đang chứng minh được tính ưu việt của mình, tạo điều kiện cho sự phát triển toàn diện của con người và xã hội, đảm bảo công bằng xã hội và tiến bộ của nhân loại.
+                    </p>
+                </section>
+            </div>
+
+            <!-- Back to Home -->
+            <div class="back-to-home">
+                <a href="index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Về trang chủ
+                </a>
             </div>
         </div>
     </main>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 Nhóm MLN131 | Cam kết liêm chính học thuật</p>
+                <p>&copy; Nhóm 3 | Cam kết liêm chính học thuật</p>
                 <div class="footer-links">
-                    <span>Nội dung trích từ tài liệu chính thống LLCT</span>
+                    <span>Nội dung trích từ nhiều nguồn</span>
                 </div>
             </div>
         </div>
     </footer>
+
     <script src="js/script.js"></script>
+    <script>
+        // Theory page specific animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.theory-section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '0';
+                        entry.target.style.transform = 'translateY(30px)';
+                        entry.target.style.transition = 'all 0.8s ease';
+                        
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, 100);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
 </body>
 </html>

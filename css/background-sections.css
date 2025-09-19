@@ -1,0 +1,53 @@
+/* Background Sections */
+.bg-section {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 80px 0;
+    width: 100%;
+}
+
+/* Overlay để đảm bảo text dễ đọc */
+.bg-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Điều chỉnh độ tối của overlay */
+    z-index: 1;
+}
+
+/* Đảm bảo nội dung nằm trên overlay */
+.bg-section > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Định nghĩa background cho từng section */
+.bg1 {
+    background-image: url("../assets/Philosophy book and glasses.jpg");
+    padding-bottom: 20px; /* hoặc 20px nếu muốn sát hẳn */
+}
+
+.bg2 {
+    background-image: url("../assets/Democracy protest crowd.jpeg");
+}
+
+.bg3 {
+    background-image: url("../assets/Lenin.jpeg");
+}
+
+.bg4 {
+    background-image: url("../assets/Vietnam National Assembly.jpeg");
+    background-position: top center; 
+}
+
+/* Media Query cho mobile */
+@media (max-width: 768px) {
+    .bg-section {
+        background-attachment: scroll; /* Tránh vấn đề fixed background trên mobile */
+    }
+}

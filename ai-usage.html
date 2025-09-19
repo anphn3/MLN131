@@ -3,126 +3,457 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AI Usage & Cam kết liêm chính - Dân chủ xã hội chủ nghĩa</title>
+    <title>AI Usage Transparency - Dân chủ xã hội chủ nghĩa</title>
     <link rel="stylesheet" href="css/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">S
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <style>
-        .ai-content {
-            background: white;
-            border-radius: 20px;
-            margin: 2rem auto;
-            padding: 3rem 2rem;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        .ai-usage-page {
+            min-height: 100vh;
+            padding: 2rem 0;
+        }
+        
+        .ai-hero {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 3rem 0;
+        }
+        
+        .ai-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #ffe790;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 20px rgba(30, 30, 30, 0.8);
+        }
+        
+        .ai-hero .subtitle {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.2rem;
+            color: #f3f5f7;
+            max-width: 800px;
+            margin: 0 auto;
             line-height: 1.8;
+            font-style: italic;
         }
+        
+        .integrity-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
+            color: var(--primary-dark);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            margin: 2rem 0;
+            box-shadow: 0 5px 20px rgba(193, 155, 10, 0.3);
+        }
+        
+        .ai-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
         .ai-section {
-            margin-bottom: 3rem;
+            background: rgba(0, 0, 0, 0.6);
+            margin: 3rem 0;
+            padding: 3rem;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
         }
-        .tool-card {
-            background: #f8f9ff;
-            border: 1px solid #e3e8ff;
-            border-radius: 15px;
-            padding: 2rem;
-            margin: 1.5rem 0;
-            position: relative;
+        
+        .ai-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: var(--accent-gold);
         }
-        .tool-card::before {
-            content: '';
-            position: absolute;
-            left:0;
-            top: 0;
-            height: 100%;
-            width: 4px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 2px;
-        }
-        .tool-header {
+        
+        .section-header {
             display: flex;
             align-items: center;
-            margin-bottom: 1rem;
+            gap: 1rem;
+            margin-bottom: 2rem;
         }
-        .tool-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+        
+        .section-header i {
+            color: var(--accent-gold-light);
+            font-size: 2.5rem;
+        }
+        
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            color: #ffe790;
+            font-size: 2.2rem;
+            font-weight: 600;
+        }
+        
+        .ai-text {
+            font-family: 'Crimson Text', serif;
+            color: #f3f5f7;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+        
+        .usage-levels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .level-card {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .level-card.prohibited {
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .level-card.limited {
+            border-left: 5px solid #f39c12;
+        }
+        
+        .level-card.moderate {
+            border-left: 5px solid #f1c40f;
+        }
+        
+        .level-card.documented {
+            border-left: 5px solid #2ecc71;
+        }
+        
+        .level-card:hover {
+            background: rgba(0, 0, 0, 0.6);
+            transform: translateY(-3px);
+        }
+        
+        .level-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .level-number {
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-family: 'Inter', sans-serif;
+            font-weight: bold;
             color: white;
-            font-size: 1.5rem;
-            margin-right: 1rem;
         }
-        .prompt-box {
-            background: #1a202c;
-            color: #e2e8f0;
-            padding: 1.5rem;
-            border-radius: 10px;
-            font-family: 'Courier New', monospace;
-            margin: 1rem 0;
-            border-left: 4px solid #667eea;
+        
+        .level-card.prohibited .level-number {
+            background: #e74c3c;
         }
-        .output-box {
-            background: #edf2f7;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 1rem 0;
-            border-left: 4px solid #10b981;
+        
+        .level-card.limited .level-number {
+            background: #f39c12;
         }
-        .edited-box {
-            background: #fff5f5;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 1rem 0;
-            border-left: 4px solid #f56565;
+        
+        .level-card.moderate .level-number {
+            background: #f1c40f;
+            color: #333;
         }
-        .commitment-box {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 3rem 2rem;
-            border-radius: 20px;
-            margin: 3rem 0;
+        
+        .level-card.documented .level-number {
+            background: #2ecc71;
+        }
+        
+        .level-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent-gold-light);
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .tool-card {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
             text-align: center;
         }
-        .verification-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        
+        .tool-card:hover {
+            background: rgba(0, 0, 0, 0.6);
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
         }
-        .verification-table th,
-        .verification-table td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .verification-table th {
-            background: #f7fafc;
-            font-weight: 600;
-            color: #2d3748;
-        }
-        .verification-table tr:hover {
-            background: #f7fafc;
-        }
-        .check-icon {
-            color: #10b981;
-            font-size: 1.2rem;
-        }
-        .warning-box {
-            background: #fff7ed;
-            border: 2px solid #fed7aa;
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-        }
-        .warning-box h4 {
-            color: #ea580c;
+        
+        .tool-icon {
+            font-size: 3rem;
+            color: var(--accent-gold-light);
             margin-bottom: 1rem;
+        }
+        
+        .tool-name {
+            font-family: 'Playfair Display', serif;
+            color: #ffe790;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tool-purpose {
+            font-family: 'Crimson Text', serif;
+            color: #f3f5f7;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .tool-usage {
+            font-family: 'Inter', sans-serif;
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: rgba(193, 155, 10, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .evidence-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .evidence-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .evidence-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .evidence-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .evidence-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .evidence-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .evidence-item:hover .evidence-caption {
+            transform: translateY(0);
+        }
+        
+        .transparency-statement {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-medium));
+            padding: 3rem;
+            border-radius: 18px;
+            margin: 3rem 0;
+            border-left: 5px solid var(--accent-gold);
+            position: relative;
+        }
+        
+        .statement-icon {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 4rem;
+            color: var(--accent-gold);
+            opacity: 0.3;
+        }
+        
+        .ethical-principles {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .ethical-principles li {
+            background: rgba(0, 0, 0, 0.3);
+            margin: 1rem 0;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-gold);
+            font-family: 'Crimson Text', serif;
+            color: #f3f5f7;
+            line-height: 1.7;
+            position: relative;
+            padding-left: 3rem;
+        }
+        
+        .ethical-principles li::before {
+            content: '✓';
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        
+        .documentation-example {
+            margin: 2rem 0;
+        }
+
+        .evidence-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .evidence-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .evidence-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .evidence-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .evidence-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .evidence-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .evidence-item:hover .evidence-caption {
+            transform: translateY(0);
+        }
+        }
+        
+        .example-header {
+            font-family: 'Inter', sans-serif;
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .back-to-home {
+            text-align: center;
+            margin: 4rem 0;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
+            color: var(--primary-dark);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(193, 155, 10, 0.3);
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(193, 155, 10, 0.5);
+        }
+        
+        @media (max-width: 768px) {
+            .ai-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .ai-section {
+                padding: 2rem 1.5rem;
+                margin: 2rem 0;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+            
+            .usage-levels {
+                grid-template-columns: 1fr;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -135,165 +466,325 @@
                 </h1>
                 <nav class="nav">
                     <ul class="nav-list">
-                        <li class="nav-item"><a href="index.html" class="nav-link"> <i class="fas fa-home"></i> Trang chủ</a></li>
-                        <li class="nav-item"><a href="theory.html" class="nav-link"> <i class="fas fa-book"></i> Lý thuyết</a></li>
-                        <li class="nav-item"><a href="practice.html" class="nav-link"> <i class="fas fa-flag"></i> Thực tiễn VN</a></li>
-                        <li class="nav-item"><a href="quiz.html" class="nav-link"> <i class="fas fa-question-circle"></i> Quiz</a></li>
-                        <li class="nav-item"><a href="ai-usage.html" class="nav-link active"> <i class="fas fa-robot"></i> AI Usage</a></li>
+                        <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Trang chủ</a></li>
+                        <li class="nav-item"><a href="theory.html" class="nav-link"><i class="fas fa-book"></i> Lý thuyết</a></li>
+                        <li class="nav-item"><a href="ai-usage.html" class="nav-link active"><i class="fas fa-robot"></i> AI Usage</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
-    <main class="main">
+
+    <main class="ai-usage-page">
         <div class="container">
-            <div class="breadcrumb">
-                <i class="fas fa-home"></i> <a href="index.html">Trang chủ</a> 
-                <i class="fas fa-chevron-right" style="margin: 0 0.5rem;"></i> 
-                <strong>AI Usage & Cam kết liêm chính</strong>
-            </div>
+            <!-- Hero Section -->
+            <section class="ai-hero">
+                <h1><i class="fas fa-robot"></i> AI Usage Transparency</h1>
+                <p class="subtitle">
+                    Báo cáo minh bạch về việc sử dụng Trí tuệ nhân tạo trong quá trình phát triển website học thuật này, 
+                    tuân thủ các nguyên tắc liêm chính học thuật và đạo đức nghiên cứu.
+                </p>
+                <div class="integrity-badge">
+                    <i class="fas fa-shield-check"></i>
+                    Cam kết liêm chính học thuật
+                </div>
+            </section>
+
             <div class="ai-content">
-                <h2 style="text-align:center; margin-bottom:3rem; color:#2d3748;">
-                    <i class="fas fa-robot"></i> Báo cáo sử dụng AI & Cam kết liêm chính học thuật
-                </h2>
-                <div class="ai-section">
-                    <h3><i class="fas fa-tools"></i> Công cụ AI đã sử dụng</h3>
-                    <div class="tool-card">
-                        <div class="tool-header">
-                            <div class="tool-icon"><i class="fas fa-brain"></i></div>
-                            <div>
-                                <h4>Claude 3.5 Sonnet (Anthropic)</h4>
-                                <p><strong>Mục đích:</strong> Hỗ trợ tạo cấu trúc website, code HTML/CSS/JavaScript và tổng hợp nội dung từ PDF</p>
+                <!-- Section 1: Transparency Statement -->
+                <section class="ai-section">
+                    <div class="transparency-statement">
+                        <i class="fas fa-certificate statement-icon"></i>
+                        <div class="section-header">
+                            <i class="fas fa-scroll"></i>
+                            <h2>Tuyên bố minh bạch</h2>
+                        </div>
+                        
+                        <p class="ai-text">
+                            <strong>Nhóm chúng em</strong> cam kết thực hành nghiên cứu và phát triển website với sự minh bạch hoàn toàn. 
+                            Chúng em tin rằng việc tiết lộ rõ ràng về cách sử dụng các công cụ AI là điều cần thiết để duy trì 
+                            tính chính trực học thuật và xây dựng niềm tin với người dùng.
+                        </p>
+                        
+                        <p class="ai-text">
+                            Tất cả nội dung chuyên môn về <strong>Dân chủ xã hội chủ nghĩa</strong> đều được nghiên cứu từ các 
+                            tài liệu học thuật chính thống, không sử dụng AI để tạo ra thông tin hoặc quan điểm chính trị.
+                        </p>
+                    </section>
+                </section>
+
+ 
+                <!-- Section 3: Tools Used -->
+                <section class="ai-section">
+                    <div class="section-header">
+                        <i class="fas fa-tools"></i>
+                        <h2>Công cụ AI được sử dụng</h2>
+                    </div>
+                    
+                    <p class="ai-text">
+                        Danh sách chi tiết các công cụ AI được sử dụng trong dự án, mục đích và phạm vi sử dụng:
+                    </p>
+                    
+                    <div class="tools-grid">
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="tool-name">Claude 3.5 Sonnet</div>
+                            <div class="tool-purpose">
+                                    Hỗ trợ tối ưu hóa cấu trúc HTML/CSS, kiểm tra logic code JavaScript và 
+                                    cải thiện trải nghiệm người dùng.
+                                </div>
+                        </div>
+                        
+                        <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <div class="tool-name">ChatGPT</div>
+                                <div class="tool-purpose">
+                                        Hỗ trợ tổng hợp ý tưởng, gợi ý cấu trúc nội dung, kiểm tra logic và giải thích các khái niệm phức tạp trong quá trình xây dựng website.
+                                    </div>
+                            </div>
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="tool-name">Perplexity</div>
+                                <div class="tool-purpose">
+                                        Tìm kiếm, tổng hợp thông tin học thuật, kiểm tra độ chính xác và cập nhật các nguồn tài liệu tham khảo cho nội dung website.
+                                    </div>
+                            </div>
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-terminal"></i>
+                                </div>
+                                <div class="tool-name">Cursor</div>
+                                <div class="tool-purpose">
+                                        Hỗ trợ viết, chỉnh sửa và tối ưu code trực tiếp trong môi trường phát triển, tăng tốc quá trình lập trình và kiểm thử.
+                                    </div>
+                            </div>
+                        
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="tool-name">GitHub Copilot</div>
+                            <div class="tool-purpose">
+                                Hỗ trợ viết code boilerplate, tự động hoàn thiện các pattern 
+                                lập trình phổ biến và tối ưu hóa hiệu suất.
                             </div>
                         </div>
-                        <div class="prompt-box">
-                            <p><strong>Prompt chính:</strong></p>
-                            <p>"Hãy tạo mã HTML/CSS cho website tương tác về dân chủ xã hội chủ nghĩa dựa trên file PDF. Yêu cầu giao diện user-friendly, responsive, có quiz tương tác và đáp ứng tiêu chí sáng tạo cho presentation"</p>
-                        </div>
-                        <div class="output-box">
-                            <p><strong>Output từ AI:</strong></p>
-                            <ul>
-                                <li>Cấu trúc HTML cơ bản cho 5 trang web</li>
-                                <li>CSS với design gradient và responsive layout</li>
-                                <li>JavaScript cho quiz tương tác và timer</li>
-                                <li>Nội dung tóm tắt từ lý thuyết trong PDF</li>
-                            </ul>
-                        </div>
-                        <div class="edited-box">
-                            <p><strong>Phần nhóm chỉnh sửa:</strong></p>
-                            <ul>
-                                <li>Kiểm tra và hiệu chỉnh nội dung lý thuyết theo tài liệu LLCT gốc</li>
-                                <li>Bổ sung thêm ví dụ thực tiễn Việt Nam hiện nay (2023-2025)</li>
-                                <li>Điều chỉnh câu hỏi quiz phù hợp với nội dung bài học</li>
-                                <li>Chỉnh sửa giao diện cho phù hợp với yêu cầu thời gian trải nghiệm ≤15 phút</li>
-                            </ul>
-                        </div>
+                        
+                        <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-book-reader"></i>
+                                </div>
+                                <div class="tool-name">NotebookLM</div>
+                                <div class="tool-purpose">
+                                        Hỗ trợ tổng hợp, tóm tắt và trích xuất nội dung, câu hỏi từ các giáo trình, tài liệu học thuật để phục vụ biên soạn nội dung website.
+                                    </div>
+                            </div>
                     </div>
-                </div>
-                <div class="ai-section">
-                    <h3><i class="fas fa-search"></i> Kiểm chứng và đối chiếu nguồn</h3>
-                    <table class="verification-table">
-                        <thead>
-                            <tr>
-                                <th>Nội dung</th>
-                                <th>Nguồn gốc</th>
-                                <th>Phương thức kiểm chứng</th>
-                                <th>Trạng thái</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Khái niệm dân chủ và nguồn gốc từ "demokratos"</td>
-                                <td>File PDF MLN131, trang 76-77</td>
-                                <td>So sánh trực tiếp với tài liệu gốc</td>
-                                <td><i class="fas fa-check-circle check-icon"></i> Đã kiểm chứng</td>
-                            </tr>
-                            <tr>
-                                <td>Lời dạy của Chủ tịch Hồ Chí Minh</td>
-                                <td>Hồ Chí Minh Toàn tập (trích từ PDF)</td>
-                                <td>Đối chiếu với nguồn trích dẫn trong PDF</td>
-                                <td><i class="fas fa-check-circle check-icon"></i> Đã kiểm chứng</td>
-                            </tr>
-                            <tr>
-                                <td>Bản chất 3 mặt của dân chủ XHCN</td>
-                                <td>File PDF MLN131, trang 82-85</td>
-                                <td>So sánh từng điểm với nội dung gốc</td>
-                                <td><i class="fas fa-check-circle check-icon"></i> Đã kiểm chứng</td>
-                            </tr>
-                            <tr>
-                                <td>Thống kê bầu cử QH XV (99.57%)</td>
-                                <td>Thông tin thực tiễn được nhóm bổ sung</td>
-                                <td>Tra cứu báo cáo chính thức của Bộ Nội vụ</td>
-                                <td><i class="fas fa-check-circle check-icon"></i> Đã kiểm chứng</td>
-                            </tr>
-                            <tr>
-                                <td>Hiến pháp 2013 - Điều 2, 6</td>
-                                <td>Văn bản pháp luật chính thống</td>
-                                <td>Đối chiếu với Hiến pháp 2013 trên cổng TTĐT Quốc hội</td>
-                                <td><i class="fas fa-check-circle check-icon"></i> Đã kiểm chứng</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="ai-section">
-                    <h3><i class="fas fa-lightbulb"></i> Ứng dụng AI sáng tạo</h3>
-                    <div class="highlight-box">
-                        <h4>AI chỉ đóng vai trò hỗ trợ, không thay thế hoàn toàn:</h4>
-                        <ul>
-                            <li><strong>Tạo cấu trúc kỹ thuật:</strong> HTML/CSS/JavaScript để xây dựng website tương tác</li>
-                            <li><strong>Hỗ trợ layout và design:</strong> Gợi ý bố cục responsive, màu sắc chuyên nghiệp</li>
-                            <li><strong>Generate quiz framework:</strong> Cấu trúc cơ bản cho câu hỏi trắc nghiệm tương tác</li>
-                            <li><strong>Tóm tắt nội dung:</strong> Rút trích thông tin chính từ PDF làm khung nội dung</li>
-                        </ul>
-                        <p><strong>Phần sinh viên tự thực hiện:</strong></p>
-                        <ul>
-                            <li>Nghiên cứu, hiểu sâu nội dung LLCT</li>
-                            <li>Bổ sung ví dụ thực tiễn và dẫn chứng cập nhật</li>
-                            <li>Thiết kế hoạt động mở, kết phù hợp</li>
-                            <li>Kiểm tra tính chính xác từng thông tin</li>
-                            <li>Điều chỉnh theo yêu cầu bài tập</li>
+                </section>
+
+                <!-- Section 4: Ethical Principles -->
+                <section class="ai-section">
+                    <div class="section-header">
+                        <i class="fas fa-balance-scale-right"></i>
+                        <h2>Nguyên tắc đạo đức</h2>
+                    </div>
+                    
+                    <p class="ai-text">
+                        Các nguyên tắc đạo đức mà nhóm tuân thủ khi sử dụng AI trong nghiên cứu và phát triển:
+                    </p>
+                    
+                    <ul class="ethical-principles">
+                        <li>
+                            <strong>Minh bạch hoàn toàn:</strong> Công khai tất cả các công cụ AI được sử dụng, 
+                            mức độ sử dụng và mục đích cụ thể của từng công cụ.
+                        </li>
+                        
+                        <li>
+                            <strong>Không thay thế tư duy:</strong> AI chỉ được sử dụng như công cụ hỗ trợ, 
+                            không thay thế quá trình tư duy, phân tích và đánh giá của con người.
+                        </li>
+                        
+                        <li>
+                            <strong>Bảo vệ tính nguyên gốc:</strong> Tất cả nội dung học thuật đều từ nguồn 
+                            đáng tin cậy, được nghiên cứu và tổng hợp bởi thành viên nhóm.
+                        </li>
+                        
+                        <li>
+                            <strong>Kiểm soát chất lượng:</strong> Mọi output từ AI đều được xem xét, 
+                            chỉnh sửa và xác minh bởi con người trước khi công bố.
+                        </li>
+                        
+                        <li>
+                            <strong>Tôn trọng bản quyền:</strong> Đảm bảo không vi phạm bản quyền, 
+                            trích dẫn nguồn đầy đủ và tuân thủ các quy định về sở hữu trí tuệ.
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Section 5: Documentation Example -->
+                <section class="ai-section">
+                    <div class="section-header">
+                        <i class="fas fa-file-alt"></i>
+                        <h2>Ví dụ tài liệu sử dụng</h2>
+                    </div>
+                    
+                    <p class="ai-text">
+                        Mẫu tài liệu minh chứng cách chúng em ghi nhận việc sử dụng AI trong từng phần của dự án:
+                    </p>
+                    
+                    <div class="evidence-gallery">
+                        <div class="evidence-item">
+                            <img src="assets/ai-evidence/nlm1.jpg" alt="Using read_file tool">
+                            <div class="evidence-caption">Tạo câu hỏi với NotebookLM</div>
+                        </div>
+                        
+                        <div class="evidence-item">
+                            <img src="assets/ai-evidence/nlm2.jpg" alt="Using semantic_search tool">
+                            <div class="evidence-caption">Tạo keyword với NotebookLM</div>
+                        </div>
+                        
+                        <div class="evidence-item">
+                            <img src="assets/ai-evidence/copilot.jpg" alt="Using grep_search tool">
+                            <div class="evidence-caption">Lập trình web bằng Copilot</div>
+                        </div>
+                        
+                        <div class="evidence-item">
+                            <img src="assets/ai-evidence/aihay.jpg" alt="Using run_in_terminal tool">
+                            <div class="evidence-caption">Tìm nguồn bằng AIHay</div>
+                        </div>
+                        
+                        <div class="evidence-item">
+                            <img src="assets/ai-evidence/nlm3.jpg" alt="Using replace_string_in_file tool">
+                            <div class="evidence-caption">Tóm tắt giáo trình bằng NotebookLM</div>
+                        </div>
+                        
+                        <div class="evidence-item">
+                            <img src="assets/ai-evidence/perplexity.jpg" alt="Using install_python_packages tool">
+                            <div class="evidence-caption">Tạo dự án web bằng Perplexity</div>
+                        </div>
+                </section>
+
+                <!-- Section 6: Academic Sources -->
+                <section class="ai-section">
+                    <div class="section-header">
+                        <i class="fas fa-university"></i>
+                        <h2>Nguồn học thuật chính thống</h2>
+                    </div>
+                    
+                    <p class="ai-text">
+                        Tất cả nội dung về Dân chủ xã hội chủ nghĩa được nghiên cứu từ các nguồn học thuật đáng tin cậy:
+                    </p>
+                    
+                    <div class="ai-text">
+                        <strong>📚 Tài liệu chính:</strong>
+                        <ul style="margin-left: 2rem; margin-top: 1rem;">
+                            <li>Giáo trình Chủ nghĩa xã hội khoa học - NXB Chính trị Quốc gia Sự thật</li>
+                            <li>Các nghị quyết, văn kiện của Đảng Cộng sản Việt Nam</li>
+                            <li>Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam 2013</li>
+                            <li>Tác phẩm của V.I. Lenin về nhà nước và dân chủ vô sản</li>
+                            <li>Tư tưởng Hồ Chí Minh về dân chủ và nhà nước</li>
                         </ul>
                     </div>
-                </div>
-                <div class="commitment-box">
-                    <h3><i class="fas fa-hand-paper"></i> CAM KẾT LIÊM CHÍNH HỌC THUẬT</h3>
-                    <div style="text-align:left; margin-top:2rem; max-width:800px; margin-left:auto; margin-right:auto;">
-                        <h4>Chúng tôi, Nhóm MLN131, cam kết rằng:</h4>
-                        <p><strong>1. Không để AI làm thay hoàn toàn:</strong></p>
-                        <p>AI chỉ được dùng như công cụ hỗ trợ kỹ thuật. Toàn bộ nội dung học thuật do nhóm nghiên cứu, hiểu sâu và tự biên soạn dựa trên tài liệu chính thống.</p>
-                        <p><strong>2. Phân định rõ AI output và phần sinh viên:</strong></p>
-                        <p>Tất cả thông tin AI tạo ra được ghi nhận minh bạch. Phần nội dung quan trọng do nhóm tự viết.</p>
-                        <p><strong>3. Đối chiếu nguồn chính thống:</strong></p>
-                        <p>Thông tin do AI hỗ trợ tạo ra được kiểm tra, đối chiếu với tài liệu LLCT, Hiến pháp 2013 và văn bản chính thống.</p>
-                        <div style="margin-top:2rem; padding:1.5rem; background:rgba(255,255,255,0.2); border-radius:10px;">
-                            <p><strong>Thành viên nhóm:</strong></p>
-                            <ul style="list-style-position: inside;">
-                                <li>Thành viên A - Lãnh đạo nhóm, nội dung lý thuyết</li>
-                                <li>Thành viên B - Kỹ thuật AI, thiết lập website</li>
-                                <li>Thành viên C - Nội dung thực tiễn, kiểm chứng</li>
-                                <li>Thành viên D - Tổ chức, phản biện, đánh giá</li>
-                            </ul>
-                        </div>
-                        <p style="text-align:center; margin-top:2rem; font-style:italic;">
-                            "Chúng tôi cam kết sản phẩm này được thực hiện với tinh thần liêm chính học thuật, tôn trọng tri thức và phục vụ mục tiêu giáo dục."
+                    
+                    <div class="ai-text" style="margin-top: 2rem;">
+                        <strong>🔍 Quy trình nghiên cứu:</strong>
+                        <ol style="margin-left: 2rem; margin-top: 1rem;">
+                            <li>Thu thập tài liệu từ nguồn chính thống</li>
+                            <li>Phân tích và tổng hợp nội dung bởi thành viên nhóm</li>
+                            <li>Thảo luận nhóm để đảm bảo hiểu đúng, đầy đủ</li>
+                            <li>Trình bày lại bằng ngôn ngữ dễ hiểu</li>
+                            <li>Kiểm tra chéo với tài liệu gốc</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <!-- Section 7: Commitment -->
+                <section class="ai-section">
+                    <div class="section-header">
+                        <i class="fas fa-handshake"></i>
+                        <h2>Cam kết của nhóm</h2>
+                    </div>
+                    
+                    <div class="transparency-statement">
+                        <p class="ai-text">
+                            <strong>Nhóm 3</strong> cam kết duy trì các tiêu chuẩn cao nhất về liêm chính học thuật. 
+                            Chúng em hiểu rằng việc sử dụng AI trong giáo dục đòi hỏi sự cân bằng giữa tận dụng công nghệ 
+                            và bảo vệ tính chính trực của nghiên cứu.
+                        </p>
+                        
+                        <p class="ai-text">
+                            Mọi câu hỏi về việc sử dụng AI trong dự án này đều được chào đón. 
+                            Chúng em sẵn sàng cung cấp thêm thông tin chi tiết hoặc làm rõ bất kỳ phần nào 
+                            khi được yêu cầu bởi giảng viên hoặc ban đánh giá.
+                        </p>
+                        
+                        <p class="ai-text">
+                            <em>Liêm chính học thuật không chỉ là quy tắc mà là giá trị cốt lõi định hướng 
+                            mọi hoạt động nghiên cứu và học tập của chúng em.</em>
                         </p>
                     </div>
-                </div>
-                <div class="warning-box">
-                    <h4><i class="fas fa-exclamation-triangle"></i> Lưu ý quan trọng</h4>
-                    <p>Sản phẩm website này được tạo ra với mục đích học tập và trình bày cho môn Chủ nghĩa xã hội khoa học. Tất cả nội dung dựa trên tài liệu chính thống và được kiểm chứng cẩn thận. Việc sử dụng AI thực hiện minh bạch và có trách nhiệm, tuân thủ nguyên tắc liêm chính học thuật.</p>
-                </div>
+                </section>
+            </div>
+
+            <!-- Back to Home -->
+            <div class="back-to-home">
+                <a href="index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Về trang chủ
+                </a>
             </div>
         </div>
     </main>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 Nhóm MLN131 | Cam kết liêm chính học thuật</p>
-                <div class="footer-links"><span>Sử dụng AI có trách nhiệm - Minh bạch - Sáng tạo</span></div>
+                <p>&copy; Nhóm 3 | Cam kết liêm chính học thuật</p>
+                <div class="footer-links">
+                    <span>Tuyên bố minh bạch về sử dụng AI - Cập nhật 18/09/2025</span>
+                </div>
             </div>
         </div>
     </footer>
+
     <script src="js/script.js"></script>
+    <script>
+        // AI Usage page specific animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.ai-section');
+            const cards = document.querySelectorAll('.level-card, .tool-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '0';
+                        entry.target.style.transform = 'translateY(20px)';
+                        entry.target.style.transition = 'all 0.6s ease';
+                        
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, 100);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            sections.forEach(section => observer.observe(section));
+            cards.forEach(card => observer.observe(card));
+            
+            // Add click tracking for transparency
+            document.querySelectorAll('.tool-card, .level-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    console.log('🔍 User viewed:', this.querySelector('.tool-name, .level-title').textContent);
+                });
+            });
+        });
+    </script>
 </body>
 </html>

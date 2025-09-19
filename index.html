@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Dân chủ xã hội chủ nghĩa - Presentation MLN131</title>
+    <title>Dân chủ xã hội chủ nghĩa - Nhóm MLN131</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/background-sections.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <script src="js/scroll-animations.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -20,61 +22,361 @@
                     <ul class="nav-list">
                         <li class="nav-item"><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Trang chủ</a></li>
                         <li class="nav-item"><a href="theory.html" class="nav-link"><i class="fas fa-book"></i> Lý thuyết</a></li>
-                        <li class="nav-item"><a href="practice.html" class="nav-link"><i class="fas fa-flag"></i> Thực tiễn VN</a></li>
-                        <li class="nav-item"><a href="quiz.html" class="nav-link"><i class="fas fa-question-circle"></i> Quiz</a></li>
                         <li class="nav-item"><a href="ai-usage.html" class="nav-link"><i class="fas fa-robot"></i> AI Usage</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
+    
     <main class="main">
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h2 class="hero-title">Tìm hiểu về Dân chủ xã hội chủ nghĩa</h2>
-                    <p class="hero-subtitle">
-                        Website tương tác giới thiệu khái niệm, bản chất và thực tiễn của dân chủ xã hội chủ nghĩa tại Việt Nam, được xây dựng dựa trên tài liệu chính thống và nghiên cứu học thuật.
-                    </p>
-                    <div class="hero-stats">
-                        <div class="stat-item"><i class="fas fa-calendar-alt"></i> <span>Thời gian trải nghiệm: ≤15 phút</span></div>
-                        <div class="stat-item"><i class="fas fa-users"></i> <span>Nhóm 4 thành viên</span></div>
-                        <div class="stat-item"><i class="fas fa-graduation-cap"></i> <span>Môn: Chủ nghĩa xã hội khoa học</span></div>
+        <!-- Section Group 1: Hero & Overview -->
+        <div class="bg-section bg1">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h2 class="hero-title">Tìm hiểu về Dân chủ xã hội chủ nghĩa</h2>
+                        <p class="hero-subtitle">
+                            Website tương tác giới thiệu khái niệm, bản chất và thực tiễn của dân chủ xã hội chủ nghĩa tại Việt Nam, được xây dựng dựa trên tài liệu chính thống và nghiên cứu học thuật.
+                        </p>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <img src="assets/Democracy.jpg" alt="Hình minh họa về dân chủ xã hội chủ nghĩa" class="hero-img" />
+            </section>
+
+            <!-- Overview Section -->
+            <section class="timeline-section">
+                <div class="container">
+                    <!-- Phần 1: Tổng quan -->
+                    <div class="timeline-part">
+                        <h2 class="section-title">
+                            <i class="fas fa-book-open"></i> Chương 4: Tổng quan - Dân Chủ và Nhà Nước Xã Hội Chủ Nghĩa
+                        </h2>
+                        
+                        <div class="overview-grid">
+                            <div class="overview-item">
+                                <div class="overview-number">01</div>
+                                <div class="overview-content">
+                                    <h4>Sự Ra Đời và Phát Triển của Dân Chủ</h4>
+                                    <p>Nguồn gốc và quá trình phát triển của dân chủ.</p>
+                                </div>
+                            </div>
+
+                            <div class="overview-item">
+                                <div class="overview-number">02</div>
+                                <div class="overview-content">
+                                    <h4>Khái Niệm Chi Tiết</h4>
+                                    <p>Bản chất và đặc trưng của Dân chủ Xã hội Chủ nghĩa.</p>
+                                </div>
+                            </div>
+
+                            <div class="overview-item">
+                                <div class="overview-number">03</div>
+                                <div class="overview-content">
+                                    <h4>Liên Hệ Thực Tế</h4>
+                                    <p>Áp dụng tại Việt Nam và vai trò của Nhà nước XHCN.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section class="features">
-            <div class="container">
-                <h3 class="section-title">Nội dung chính</h3>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-lightbulb"></i></div>
-                        <h4>Khái niệm dân chủ</h4>
-                        <p>Tìm hiểu về nguồn gốc, sự phát triển và các quan niệm về dân chủ từ cổ đại đến hiện đại.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-star"></i></div>
-                        <h4>Dân chủ XHCN</h4>
-                        <p>Phân tích bản chất chính trị, kinh tế, tư tưởng-văn hóa-xã hội của nền dân chủ xã hội chủ nghĩa.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-map-marked-alt"></i></div>
-                        <h4>Thực tiễn Việt Nam</h4>
-                        <p>Dẫn chứng và ví dụ về việc áp dụng dân chủ XHCN trong bối cảnh xã hội Việt Nam hiện nay.</p>
+            </section>
+        </div>
+
+        <!-- Section Group 2: History Timeline -->
+        <div class="bg-section bg2">
+            <section class="timeline-section">
+                <div class="container">
+                    <div class="timeline-part">
+                        <h2 class="section-title">
+                            <i class="fas fa-history"></i> Sự Ra Đời và Phát Triển của Dân Chủ
+                        </h2>
+                        <p class="timeline-intro">Dân chủ là một hành trình dài của nhân loại, từ những hình thái sơ khai đến các thể chế phức tạp.</p>
+                        
+                        <!-- Historical Timeline with Custom Images -->
+                        <div class="historical-timeline-container">
+                            <!-- Background Stars -->
+                            <div class="stars-background">
+                                <div class="star star-1"></div>
+                                <div class="star star-2"></div>
+                                <div class="star star-3"></div>
+                                <div class="star star-4"></div>
+                                <div class="star star-5"></div>
+                                <div class="star star-6"></div>
+                                <div class="star star-7"></div>
+                                <div class="star star-8"></div>
+                            </div>
+                            
+                            <!-- Time Flow Path -->
+                            <div class="time-flow-path"></div>
+                            
+                            <!-- Timeline Milestones -->
+                            <div class="timeline-milestone milestone-2" data-milestone="2">
+                                <div class="milestone-image">
+                                    <img src="assets/Unity hands together.jpg" alt="Dân Chủ Nguyên Thủy" />
+                                    <div class="image-overlay"></div>
+                                </div>
+                                <div class="milestone-label">Dân Chủ Nguyên Thủy</div>
+                            </div>
+
+                            <div class="timeline-milestone milestone-3" data-milestone="3">
+                                <div class="milestone-image">
+                                    <img src="assets/black.jpg" alt="Dân Chủ Chủ Nô" />
+                                    <div class="image-overlay"></div>
+                                </div>
+                                <div class="milestone-label">Dân Chủ Chủ Nô</div>
+                            </div>
+                            
+                            <div class="timeline-milestone milestone-4" data-milestone="4">
+                                <div class="milestone-image">
+                                    <img src="assets/Portrait of Ho Chi Minh.jpg" alt="Chế Độ Phong Kiến" />
+                                    <div class="image-overlay"></div>
+                                </div>
+                                <div class="milestone-label">Chế Độ Phong Kiến</div>
+                            </div>
+                            
+                            <div class="timeline-milestone milestone-5" data-milestone="5">
+                                <div class="milestone-image">
+                                    <img src="assets/Democracy protest crowd.jpg" alt="Dân Chủ Tư Sản" />
+                                    <div class="image-overlay"></div>
+                                </div>
+                                <div class="milestone-label">Dân Chủ Tư Sản</div>
+                            </div>
+                            
+                            <div class="timeline-milestone milestone-6" data-milestone="6">
+                                <div class="milestone-image">
+                                    <img src="assets/Vietnam National Assembly.jpg" alt="Dân Chủ XHCN" />
+                                    <div class="image-overlay"></div>
+                                </div>
+                                <div class="milestone-label">Dân Chủ XHCN</div>
+                            </div>
+                            
+                            <!-- Camera Viewport -->
+                            <div class="camera-viewport">
+                                <div class="milestone-detail">
+                                    <div class="milestone-detail-content">
+                                        <h3 class="milestone-title"></h3>
+                                        <p class="milestone-description"></p>
+                                        <div class="milestone-stats">
+                                            <div class="stat-item">
+                                                <span class="stat-label">Thời kỳ:</span>
+                                                <span class="stat-value"></span>
+                                            </div>
+                                            <div class="stat-item">
+                                                <span class="stat-label">Đặc trưng:</span>
+                                                <span class="stat-value"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
+
+        <!-- Section Group 3: Socialist Democracy -->
+        <div class="bg-section bg3">
+            <section class="socialist-democracy-section">
+                <div class="container">
+                    <h2 class="section-title">
+                        <i class="fas fa-star"></i> Dân chủ xã hội chủ nghĩa
+                    </h2>
+                    
+                    <!-- Quá trình ra đời -->
+                    <div class="democracy-evolution">
+                        <h3><i class="fas fa-seedling"></i> Quá trình ra đời của nền dân chủ xã hội chủ nghĩa</h3>
+                        
+                        <div class="evolution-timeline">
+                            <div class="evolution-step">
+                                <div class="step-icon">
+                                    <img src="assets/parisgay.jpg" alt="Công xã Paris 1871" />
+                                </div>
+                                <div class="step-content">
+                                    <h4>Công xã Paris 1871</h4>
+                                    <p>Bước thử nghiệm đầu tiên - hình thức chính quyền mới, dân chủ hơn hẳn quân chủ hay cộng hòa tư sản. Nhân dân lao động trực tiếp nắm quyền lực.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="evolution-step">
+                                <div class="step-icon">
+                                    <img src="assets/CMT10.jpg" alt="Cách mạng Tháng Mười" />
+                                </div>
+                                <div class="step-content">
+                                    <h4>Cách mạng Tháng Mười Nga 1917</h4>
+                                    <p>Dưới sự lãnh đạo của Đảng Bolshevik và Lenin, lần đầu tiên nền dân chủ vô sản được xác lập ở quy mô toàn quốc.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="definition-highlight">
+                            <div class="definition-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <div class="definition-content">
+                                <h4>Định nghĩa</h4>
+                                <p><strong>Dân chủ xã hội chủ nghĩa</strong> là hình thức dân chủ cao nhất trong lịch sử, kết tinh từ thực tiễn Công xã Paris và Cách mạng Tháng Mười Nga, bảo đảm quyền lực thuộc về nhân dân lao động.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Bản chất -->
+                    <div class="democracy-essence">
+                        <h3><i class="fas fa-gem"></i> Bản chất của nền dân chủ xã hội chủ nghĩa</h3>
+                        
+                        <div class="essence-intro">
+                            <div class="lenin-quote">
+                                <img src="assets/VI Lenin.jpg" alt="V.I Lenin" />
+                                <div class="quote-content">
+                                    <p>"Dân chủ vô sản là dân chủ đối với quần chúng lao động - chế độ dân chủ vì lợi ích của đa số"</p>
+                                    <cite>- V.I. Lenin</cite>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="essence-grid">
+                            <div class="essence-card political">
+                                <div class="card-header">
+                                    <i class="fas fa-landmark"></i>
+                                    <h4>Bản chất chính trị</h4>
+                                </div>
+                                <div class="card-content">
+                                    <ul>
+                                        <li>Dân chủ của đa số - công nhân và nhân dân lao động</li>
+                                        <li>Dưới sự lãnh đạo duy nhất của Đảng Cộng sản</li>
+                                        <li>Lenin: "Dân chủ XHCN gấp triệu lần dân chủ tư sản"</li>
+                                        <li>Hồ Chí Minh: "Quyền lực là của dân, lợi ích vì dân"</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="essence-card economic">
+                                <div class="card-header">
+                                    <i class="fas fa-industry"></i>
+                                    <h4>Bản chất kinh tế</h4>
+                                </div>
+                                <div class="card-content">
+                                    <ul>
+                                        <li>Cơ sở là công hữu tư liệu sản xuất chủ yếu</li>
+                                        <li>Quyền làm chủ thể hiện trong sản xuất, phân phối</li>
+                                        <li>Mục tiêu: phát triển lực lượng sản xuất, nâng cao đời sống</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="essence-card cultural">
+                                <div class="card-header">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <h4>Bản chất văn hóa - xã hội</h4>
+                                </div>
+                                <div class="card-content">
+                                    <ul>
+                                        <li>Hệ tư tưởng chủ đạo: Mác - Lênin</li>
+                                        <li>Kế thừa tinh hoa văn hóa dân tộc</li>
+                                        <li>Người dân làm chủ đời sống tinh thần</li>
+                                        <li>Dân chủ trở thành thành tựu văn hóa</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
+            <!-- Socialist Democracy Section -->
+
+            </div>
+        </div>
+
+        <!-- Section Group 4: Vietnam Practice -->
+        <div class="bg-section bg4">
+            <section class="vietnam-practice-section">
+                <div class="container">
+                    <h2 class="section-title">
+                        <i class="fas fa-gavel"></i> Thực tiễn ở Việt Nam
+                    </h2>
+                        <div class="practice-accordion">
+                            <div class="practice-card">
+                                <button class="practice-card-header">Hiến pháp và pháp luật <i class="fas fa-chevron-down"></i></button>
+                                <div class="practice-card-body">
+                                    <p>Các Hiến pháp của Việt Nam (từ 1946 đến 2013) đều khẳng định chế độ dân chủ và bản chất của Nhà nước XHCN là nhà nước của dân, do dân, vì dân. Đặc biệt, Hiến pháp năm 2013 đã thể hiện rõ và xuyên suốt quan điểm xây dựng chế độ dân chủ và nhà nước pháp quyền XHCN.</p>
+                                </div>
+                            </div>
+                            <div class="practice-card">
+                                <button class="practice-card-header">Cơ chế thực hiện <i class="fas fa-chevron-down"></i></button>
+                                <div class="practice-card-body">
+                                    <p>Nhân dân thực hiện quyền làm chủ của mình thông qua hoạt động của các cơ quan nhà nước, của hệ thống chính trị và các hình thức dân chủ trực tiếp, dân chủ đại diện.</p>
+                                </div>
+                            </div>
+                            <div class="practice-card">
+                                <button class="practice-card-header">Thực hiện dân chủ ở cơ sở <i class="fas fa-chevron-down"></i></button>
+                                <div class="practice-card-body">
+                                    <p>Đây là một nội dung quan trọng và nhất quán trong đường lối cách mạng của Đảng. Nhiều văn bản quy phạm pháp luật đã được ban hành để mở rộng dân chủ XHCN và phát huy quyền làm chủ của nhân dân, đặc biệt là ở cấp xã, phường, thị trấn (ví dụ: Luật Thực hiện dân chủ ở cơ sở năm 2022).</p>
+                                </div>
+                            </div>
+                            <div class="practice-card">
+                                <button class="practice-card-header">Mô hình "Dân biết, dân bàn, dân làm, dân kiểm tra, dân giám sát, dân thụ hưởng" <i class="fas fa-chevron-down"></i></button>
+                                <div class="practice-card-body">
+                                    <p>Đây là phương châm được Đảng Cộng sản Việt Nam đề ra và bổ sung, phát triển, thể hiện sự phát triển nhận thức của Đảng về việc xây dựng và bảo đảm thực hiện dân chủ, khẳng định tính ưu việt của chế độ XHCN ở Việt Nam, đặt nhân dân vào vị trí trung tâm.</p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </section>
+
+                    <!-- Quan điểm của Đảng Section -->
+                    <section class="vietnam-practice-section">
+                        <div class="container">
+                            <h2 class="section-title">
+                                <i class="fas fa-lightbulb"></i> Quan điểm của Đảng Cộng sản Việt Nam về phát huy dân chủ XHCN
+                            </h2>
+                            <div class="practice-accordion">
+                                <div class="practice-card">
+                                    <button class="practice-card-header">Đại hội XIII của Đảng <i class="fas fa-chevron-down"></i></button>
+                                    <div class="practice-card-body">
+                                        <p>Xác định phương hướng phát triển đất nước đến năm 2030 là "Thực hành và phát huy rộng rãi dân chủ XHCN, quyền làm chủ và vai trò chủ thể của nhân dân; củng cố, nâng cao niềm tin của nhân dân, tăng cường đồng thuận xã hội".</p>
+                                    </div>
+                                </div>
+                                <div class="practice-card">
+                                    <button class="practice-card-header">Nhiệm vụ và giải pháp trọng tâm <i class="fas fa-chevron-down"></i></button>
+                                    <div class="practice-card-body">
+                                        <p>Hoàn thiện đồng bộ hệ thống pháp luật, cơ chế, chính sách nhằm phát huy mạnh mẽ dân chủ XHCN, quyền làm chủ của nhân dân; đồng thời tăng cường pháp chế, bảo đảm kỷ cương xã hội, trước hết là việc thực thi tinh thần "thượng tôn pháp luật" của các cấp ủy, tổ chức đảng, chính quyền, Mặt trận Tổ quốc và các tổ chức chính trị - xã hội, cũng như của cán bộ, đảng viên.</p>
+                                    </div>
+                                </div>
+                                <div class="practice-card">
+                                    <button class="practice-card-header">Xây dựng Nhà nước pháp quyền XHCN <i class="fas fa-chevron-down"></i></button>
+                                    <div class="practice-card-body">
+                                        <p>Nhiệm vụ trọng tâm trong xây dựng nền dân chủ XHCN là xây dựng và hoàn thiện Nhà nước pháp quyền XHCN của nhân dân, do nhân dân, vì nhân dân, đảm bảo tất cả quyền lực nhà nước thuộc về nhân dân, dưới sự lãnh đạo của Đảng Cộng sản Việt Nam.</p>
+                                    </div>
+                                </div>
+                                <div class="practice-card">
+                                <div class="practice-card">
+                                    <button class="practice-card-header">Những thách thức và giải pháp <i class="fas fa-chevron-down"></i></button>
+                                    <div class="practice-card-body">
+                                        <ul>
+                                            <li>Việc thực hành dân chủ ở Việt Nam vẫn đang trong quá trình hoàn thiện và chưa đồng bộ.</li>
+                                            <li>Một số cán bộ, công chức, viên chức chưa nhận thức đầy đủ về trách nhiệm, quyền, nghĩa vụ của mình; chưa có tư tưởng, tác phong dân chủ.</li>
+                                            <li>Kiểm soát mặt trái của internet và các thế lực thù địch lợi dụng vấn đề dân chủ để chống phá cách mạng Việt Nam là một thách thức lớn.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    </div>
+                </section>
+
+    
+    
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 Nhóm MLN131 | Cam kết liêm chính học thuật</p>
-                <div class="footer-links"><span>Sản phẩm sáng tạo môn CNXH - Ngành AI</span></div>
+                <p>&copy; Nhóm 3 | Cam kết liêm chính học thuật</p>
+                <div class="footer-links">
+                    <span>Nội dung trích từ nhiều nguồn</span>
+                </div>
             </div>
         </div>
     </footer>
